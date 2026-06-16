@@ -10,7 +10,7 @@ export default function Projects() {
   const visible = showAll ? DATA.projects : DATA.projects.slice(0, INITIAL_SHOW)
 
   return (
-    <section id="projects" style={{ padding: '6rem 5%', background: 'var(--bg)' }}>
+    <section id="projects" className="projects-section" style={{ padding: '6rem 5%', background: 'var(--bg)' }}>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
@@ -26,7 +26,7 @@ export default function Projects() {
       </motion.div>
 
       {/* Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(310px, 1fr))', gap: '1.4rem' }}>
+      <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(310px, 1fr))', gap: '1.4rem' }}>
         {visible.map((p, i) => (
           <ProjectCard key={p.title} project={p} index={i} />
         ))}

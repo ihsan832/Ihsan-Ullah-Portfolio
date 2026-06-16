@@ -2,7 +2,7 @@ import { DATA } from '../data'
 
 export default function Footer() {
   return (
-    <footer style={{
+    <footer className="footer-section" style={{
       background: 'var(--bg2)',
       borderTop: '1px solid var(--border)',
       padding: '2rem 5%',
@@ -12,7 +12,7 @@ export default function Footer() {
       <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
         © 2026 <span style={{ color: 'var(--green)' }}>{DATA.name}</span>. Built with ❤️ and lots of Python.
       </p>
-      <div style={{ display: 'flex', gap: '1.4rem' }}>
+      <div className="footer-links" style={{ display: 'flex', gap: '1.4rem' }}>
         {[
           {icon: '💻', label: 'GitHub',   href: DATA.github   },
           {icon: '🔗', label: 'LinkedIn', href: DATA.linkedin  },

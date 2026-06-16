@@ -14,7 +14,7 @@ export default function Experience() {
   ]
 
   return (
-    <section id="experience" style={{ padding: '6rem 5%', background: 'var(--bg2)' }}>
+    <section id="experience" className="experience-section" style={{ padding: '6rem 5%', background: 'var(--bg2)' }}>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
@@ -29,7 +29,7 @@ export default function Experience() {
       </motion.div>
 
       {/* Timeline */}
-      <div style={{ maxWidth: 760, margin: '0 auto', paddingLeft: '2rem', position: 'relative' }}>
+      <div className="experience-timeline" style={{ maxWidth: 760, margin: '0 auto', paddingLeft: '2rem', position: 'relative' }}>
         {/* Vertical line */}
         <div style={{
           position: 'absolute', left: '6px', top: 0, bottom: 0,

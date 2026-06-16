@@ -51,6 +51,7 @@ export default function Hero() {
   return (
     <section
       id="home"
+      className="hero-section"
       style={{
         minHeight: '100vh',
         display: 'flex', alignItems: 'center',
@@ -72,6 +73,7 @@ export default function Hero() {
       {CODE_SYMBOLS.map((s, i) => (
         <motion.div
           key={i}
+          className="hero-code-symbol"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.14 }}
           transition={{ delay: 1.2 + i * 0.15 }}
@@ -86,7 +88,7 @@ export default function Hero() {
       ))}
 
       {/* ---- LEFT: Text Content ---- */}
-      <div style={{ flex: 1, maxWidth: 580, zIndex: 2 }}>
+      <div className="hero-left" style={{ flex: 1, maxWidth: 580, zIndex: 2 }}>
         {/* Role badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -134,6 +136,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
+          className="hero-description"
           style={{
             color: 'var(--text-muted)', lineHeight: 1.75,
             fontSize: 'clamp(0.92rem, 1.5vw, 1.05rem)',
@@ -148,6 +151,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.55 }}
+          className="hero-buttons"
           style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2.2rem' }}
         >
           <BtnPrimary href="#projects">View Projects <FiArrowRight /></BtnPrimary>
@@ -159,6 +163,7 @@ export default function Hero() {
 
       {/* ---- RIGHT: Profile Photo ---- */}
       <motion.div
+        className="hero-right"
         initial={{ opacity: 0, scale: 0.85 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.3 }}
@@ -167,7 +172,7 @@ export default function Hero() {
           justifyContent: 'flex-end', zIndex: 2,
         }}
       >
-        <div style={{ position: 'relative', width: 320, height: 320 }}>
+        <div className="hero-photo-wrapper" style={{ position: 'relative', width: 320, height: 320 }}>
           {/* Outer dashed ring */}
           <div className="spin-slow" style={{
             position: 'absolute', inset: -26,
@@ -196,17 +201,19 @@ export default function Hero() {
             }}
           />
           {/* Available badge */}
-          <div style={{
-            position: 'absolute', bottom: 10, right: -24,
-            background: 'var(--card)',
-            border: '1px solid var(--border)',
-            borderRadius: '50px',
-            padding: '0.38rem 1rem',
-            display: 'flex', alignItems: 'center', gap: '0.5rem',
-            fontSize: '0.82rem', fontWeight: 600,
-            zIndex: 3,
-            boxShadow: '0 4px 24px rgba(0,0,0,0.45)',
-          }}>
+          <div
+            className="hero-available-badge"
+            style={{
+              position: 'absolute', bottom: 10, right: -24,
+              background: 'var(--card)',
+              border: '1px solid var(--border)',
+              borderRadius: '50px',
+              padding: '0.38rem 1rem',
+              display: 'flex', alignItems: 'center', gap: '0.5rem',
+              fontSize: '0.82rem', fontWeight: 600,
+              zIndex: 3,
+              boxShadow: '0 4px 24px rgba(0,0,0,0.45)',
+            }}>
             <div className="pulse-dot" style={{
               width: 8, height: 8, borderRadius: '50%',
               background: 'var(--green)',

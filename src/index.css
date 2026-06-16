@@ -22,6 +22,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -29,6 +30,8 @@ body {
   color: var(--text);
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Scrollbar */
@@ -72,3 +75,237 @@ body {
   to   { transform: rotate(360deg); }
 }
 .spin-slow { animation: spin-slow 18s linear infinite; }
+
+
+/* ============================================================
+   RESPONSIVE UTILITIES
+   Breakpoints:
+     xs   : <= 480px   (small phones)
+     sm   : <= 640px   (phones)
+     md   : <= 768px   (large phones / small tablets)
+     lg   : <= 1024px  (tablets / small laptops)
+   ============================================================ */
+
+/* ---- Navbar mobile burger button ---- */
+.nav-mobile-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  padding: 0.4rem 0.55rem;
+  border-radius: 6px;
+  line-height: 1;
+  font-size: 1.2rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+.nav-mobile-btn:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+/* ---- Mobile slide-down menu ---- */
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: rgba(10,15,13,0.97);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  padding: 0.5rem 5% 1rem;
+  flex-direction: column;
+  z-index: 98;
+}
+.nav-mobile-menu.open {
+  display: flex;
+}
+.nav-mobile-menu a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s;
+}
+.nav-mobile-menu a:last-child {
+  border-bottom: none;
+}
+.nav-mobile-menu a:hover {
+  color: var(--green);
+}
+
+
+/* =========================
+   TABLET / LAPTOP  (≤ 1024px)
+   ========================= */
+@media (max-width: 1024px) {
+  /* Slightly smaller profile photo */
+  .hero-photo-wrapper {
+    width: 270px !important;
+    height: 270px !important;
+  }
+}
+
+
+/* =========================
+   MEDIUM  (≤ 768px)  — tablets & large phones
+   ========================= */
+@media (max-width: 768px) {
+
+  /* --- Navbar --- */
+  .nav-desktop-links {
+    display: none !important;
+  }
+  .nav-github-btn {
+    display: none !important;
+  }
+  .nav-mobile-btn {
+    display: block;
+  }
+
+  /* --- Hero --- */
+  .hero-section {
+    flex-direction: column-reverse !important;
+    align-items: center !important;
+    padding-top: 90px !important;
+    padding-bottom: 3rem !important;
+    gap: 2.5rem !important;
+    text-align: center;
+  }
+  .hero-left {
+    max-width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-right {
+    justify-content: center !important;
+    flex: unset !important;
+  }
+  .hero-photo-wrapper {
+    width: 220px !important;
+    height: 220px !important;
+  }
+  .hero-available-badge {
+    right: -6px !important;
+    bottom: 6px !important;
+    font-size: 0.75rem !important;
+    padding: 0.3rem 0.75rem !important;
+  }
+  /* Hide floating code symbols — they overflow on small screens */
+  .hero-code-symbol {
+    display: none !important;
+  }
+  .hero-description {
+    max-width: 100% !important;
+  }
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  /* --- About --- */
+  .about-grid {
+    gap: 2.5rem !important;
+  }
+
+  /* --- Skills --- */
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+  }
+
+  /* --- Experience --- */
+  .experience-timeline {
+    padding-left: 1.6rem !important;
+  }
+
+  /* --- Contact --- */
+  .contact-grid {
+    gap: 2.5rem !important;
+  }
+  .contact-name-email {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* --- Footer --- */
+  .footer-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+    gap: 1rem !important;
+  }
+}
+
+
+/* =========================
+   SMALL  (≤ 480px)  — phones
+   ========================= */
+@media (max-width: 480px) {
+
+  /* --- Hero --- */
+  .hero-section {
+    padding-top: 80px !important;
+    gap: 1.8rem !important;
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+  .hero-photo-wrapper {
+    width: 180px !important;
+    height: 180px !important;
+  }
+  .hero-available-badge {
+    right: -2px !important;
+    bottom: 4px !important;
+    font-size: 0.7rem !important;
+    padding: 0.25rem 0.6rem !important;
+  }
+
+  /* --- About --- */
+  .about-section {
+    padding: 3.5rem 4% !important;
+  }
+  .about-stats-grid {
+    gap: 0.8rem !important;
+  }
+
+  /* --- Skills --- */
+  .skills-section {
+    padding: 3.5rem 4% !important;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* --- Experience --- */
+  .experience-section {
+    padding: 3.5rem 4% !important;
+  }
+  .experience-timeline {
+    padding-left: 1.2rem !important;
+  }
+
+  /* --- Projects --- */
+  .projects-section {
+    padding: 3.5rem 4% !important;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* --- Contact --- */
+  .contact-section {
+    padding: 3.5rem 4% !important;
+  }
+
+  /* --- Footer --- */
+  .footer-section {
+    padding: 1.5rem 4% !important;
+  }
+  .footer-links {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+  }
+}

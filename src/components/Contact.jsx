@@ -88,7 +88,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" style={{ padding: '6rem 5%', background: 'var(--bg2)' }}>
+    <section id="contact" className="contact-section" style={{ padding: '6rem 5%', background: 'var(--bg2)' }}>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
@@ -104,7 +104,7 @@ export default function Contact() {
         </p>
       </motion.div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem', alignItems: 'start', maxWidth: 1000, margin: '0 auto' }}>
+      <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem', alignItems: 'start', maxWidth: 1000, margin: '0 auto' }}>
         {/* Left info */}
         <motion.div
           initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }}
@@ -158,7 +158,7 @@ export default function Contact() {
           {/* Form */}
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {/* Name + Email row */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div className="contact-name-email" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <TextInput
                 label="name"
                 name="name"

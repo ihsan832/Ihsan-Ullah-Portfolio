@@ -14,7 +14,7 @@ function fadeUp(delay = 0) {
 
 export default function About() {
   return (
-    <section id="about" style={{ padding: '6rem 5%', background: 'var(--bg2)' }}>
+    <section id="about" className="about-section" style={{ padding: '6rem 5%', background: 'var(--bg2)' }}>
       {/* Header */}
       <motion.div {...fadeUp()} style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
         <div style={{ color: 'var(--green)', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
@@ -22,7 +22,7 @@ export default function About() {
         <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800 }}>Who I Am</h2>
       </motion.div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+      <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem', alignItems: 'center' }}>
         {/* Left */}
         <motion.div {...fadeUp(0.1)}>
           <h3 style={{ fontSize: '1.55rem', fontWeight: 700, marginBottom: '1rem' }}>
@@ -68,7 +68,7 @@ export default function About() {
         {/* Right */}
         <motion.div {...fadeUp(0.2)}>
           {/* Stats grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.2rem', marginBottom: '1.5rem' }}>
+          <div className="about-stats-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.2rem', marginBottom: '1.5rem' }}>
             {DATA.stats.map((s, i) => (
               <div
                 key={i}

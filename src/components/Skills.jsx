@@ -3,7 +3,7 @@ import { DATA } from '../data'
 
 export default function Skills() {
   return (
-    <section id="skills" style={{ padding: '6rem 5%', background: 'var(--bg)' }}>
+    <section id="skills" className="skills-section" style={{ padding: '6rem 5%', background: 'var(--bg)' }}>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
@@ -19,7 +19,7 @@ export default function Skills() {
       </motion.div>
 
       {/* Cards grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.4rem' }}>
+      <div className="skills-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.4rem' }}>
         {DATA.skills.map((sk, i) => (
           <motion.div
             key={i}
