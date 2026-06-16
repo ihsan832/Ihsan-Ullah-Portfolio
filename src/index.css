@@ -136,6 +136,9 @@ body {
 .nav-mobile-menu a:hover {
   color: var(--green);
 }
+.nav-mobile-github {
+  border-bottom: none !important;
+}
 
 
 /* =========================

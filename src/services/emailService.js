@@ -99,10 +99,15 @@ export const sendEmail = async (formData) => {
         success: true,
         message: 'Message sent successfully! I will get back to you soon.',
       }
+    } else {
+      throw {
+        type: 'send',
+        message: 'Failed to send message. Please try again later.',
+      }
     }
   } catch (error) {
     console.error('Email sending error:', error)
-    throw {
+    throw error.type ? error : {
       type: 'send',
       message: 'Failed to send message. Please try again later.',
       error,

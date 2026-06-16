@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { FiGithub, FiLinkedin, FiMail, FiArrowRight } from 'react-icons/fi'
+import { FiArrowRight } from 'react-icons/fi'
 import { DATA, PROFILE_IMAGE } from '../data'
 
 // Floating code symbols (decorative, like the reference design)

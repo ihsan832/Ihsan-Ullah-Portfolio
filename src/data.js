@@ -129,7 +129,7 @@ export const DATA = {
     {
       title: 'House Price Prediction API',
       desc:  'ML model served via FastAPI for predicting real estate prices.',
-      tech:  ['FastAPI', 'Scikit-Learn', 'FastAPI'],
+      tech:  ['FastAPI', 'Scikit-Learn', 'Regression'],
       icon:  '🏠',
       link:  'https://github.com/ihsan832/House-Price-Prediction-ML---API',
     },

@@ -108,7 +108,8 @@ export default function Navbar() {
           href={DATA.github}
           target="_blank"
           rel="noreferrer"
-          style={{ color: 'var(--green)', fontWeight: 700, borderBottom: 'none !important' }}
+          className="nav-mobile-github"
+          style={{ color: 'var(--green)', fontWeight: 700 }}
           onClick={() => setMenuOpen(false)}
         >
           GitHub ↗
